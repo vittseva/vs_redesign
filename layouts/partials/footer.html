@@ -36,7 +36,7 @@
           {{ range .Site.Menus.main.ByWeight }}
             {{ if and .HasChildren (eq .Identifier "services") }}
               {{ range .Children.ByWeight }}
-              <li><a href="{{ .URL }}" class="text-gray-400 hover:text-primary transition">{{ .Name }}</a></li>
+              <li><a href="{{ .URL | relURL }}" class="text-gray-400 hover:text-primary transition">{{ .Name }}</a></li>
               {{ end }}
             {{ end }}
           {{ end }}

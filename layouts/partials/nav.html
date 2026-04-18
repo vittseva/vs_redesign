@@ -50,14 +50,14 @@
                  x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
                  class="absolute top-full left-0 w-56 bg-white rounded-xl shadow-cardHover border border-gray-100 py-2 z-50">
               {{ range .Children.ByWeight }}
-              <a href="{{ .URL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-xlight hover:text-primary transition">
+              <a href="{{ .URL | relURL }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-xlight hover:text-primary transition">
                 {{ .Name }}
               </a>
               {{ end }}
             </div>
           </div>
           {{ else }}
-          <a href="{{ .URL }}"
+          <a href="{{ .URL | relURL }}"
              class="px-3 py-2 rounded-md text-sm font-medium transition
                     {{ if $active }}text-primary font-semibold{{ else }}text-gray-700 hover:text-primary{{ end }}">
             {{ .Name }}
@@ -92,12 +92,12 @@
         </button>
         <div x-show="sub" class="pl-4 space-y-1">
           {{ range .Children.ByWeight }}
-          <a href="{{ .URL }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary rounded-lg">{{ .Name }}</a>
+          <a href="{{ .URL | relURL }}" class="block px-3 py-2 text-sm text-gray-600 hover:text-primary rounded-lg">{{ .Name }}</a>
           {{ end }}
         </div>
       </div>
       {{ else }}
-      <a href="{{ .URL }}" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-lg">{{ .Name }}</a>
+      <a href="{{ .URL | relURL }}" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-lg">{{ .Name }}</a>
       {{ end }}
     {{ end }}
     <div class="pt-2">
