@@ -64,7 +64,7 @@
             </a>
           </li>
         </ul>
-        <a href="{{ .Site.Params.contact_url | relURL }}"
+        <a href="{{ urls.JoinPath .Site.BaseURL .Site.Params.contact_url }}"
            class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition">
           <i class="fas fa-calendar-check"></i>
           Book Consultation

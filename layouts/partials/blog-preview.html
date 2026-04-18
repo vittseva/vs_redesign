@@ -9,7 +9,7 @@
         <span class="text-primary font-semibold text-sm tracking-widest uppercase">Insights</span>
         <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">From Our Blog</h2>
       </div>
-      <a href="{{ "/blog/" | relURL }}"
+      <a href="{{ urls.JoinPath .Site.BaseURL "/blog/" }}"
          class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
         All articles <i class="fas fa-arrow-right text-xs"></i>
       </a>
@@ -53,7 +53,7 @@
     </div>
 
     <div class="text-center mt-8 sm:hidden">
-      <a href="{{ "/blog/" | relURL }}"
+      <a href="{{ urls.JoinPath .Site.BaseURL "/blog/" }}"
          class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
         All articles <i class="fas fa-arrow-right text-xs"></i>
       </a>

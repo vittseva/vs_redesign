@@ -7,7 +7,7 @@
     <h1 class="mt-2 text-3xl lg:text-4xl font-bold text-white mb-2">{{ .Title }}</h1>
     <p class="text-white/65 text-base max-w-2xl">{{ .Description }}</p>
     <nav class="mt-4 text-sm text-white/50">
-      <a href="{{ "/" | relURL }}" class="hover:text-white transition">Home</a>
+      <a href="{{ urls.JoinPath .Site.BaseURL "/" }}" class="hover:text-white transition">Home</a>
       <span class="mx-2">/</span>
       <span class="text-white/80">{{ .Title }}</span>
     </nav>
@@ -41,7 +41,7 @@
           <i class="fas fa-calendar-check text-xl mb-2 block"></i>
           <p class="font-bold text-sm mb-1">Free Consultation</p>
           <p class="text-white/70 text-xs mb-3 leading-relaxed">Not sure which service you need? Let's talk.</p>
-          <a href="{{ "/contact/" | relURL }}"
+          <a href="{{ urls.JoinPath .Site.BaseURL "/contact/" }}"
              class="block text-center px-3 py-2 bg-white text-primary-dark font-bold text-xs rounded-lg hover:bg-primary-light transition">
             Book Free Call
           </a>

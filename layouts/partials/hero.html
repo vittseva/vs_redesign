@@ -20,12 +20,12 @@
           {{ .Site.Params.hero.subtext }}
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="{{ .Site.Params.hero.cta_primary_url | relURL }}"
+          <a href="{{ urls.JoinPath .Site.BaseURL .Site.Params.hero.cta_primary_url }}"
              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-primary-dark font-bold rounded-xl hover:bg-primary-light transition shadow-lg text-base">
             <i class="fas fa-calendar-check"></i>
             {{ .Site.Params.hero.cta_primary_text }}
           </a>
-          <a href="{{ .Site.Params.hero.cta_secondary_url | relURL }}"
+          <a href="{{ urls.JoinPath .Site.BaseURL .Site.Params.hero.cta_secondary_url }}"
              class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-white/60 text-white font-semibold rounded-xl hover:bg-white/10 transition text-base">
             {{ .Site.Params.hero.cta_secondary_text }}
             <i class="fas fa-arrow-right text-sm"></i>
