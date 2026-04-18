@@ -7,7 +7,7 @@
       <!-- Main content -->
       <div class="lg:col-span-2">
         {{ with .Params.banner }}
-        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full rounded-2xl mb-8 shadow-card object-cover max-h-72">
+        <img src="{{ urls.JoinPath $.Site.BaseURL . }}" alt="{{ $.Title }}" class="w-full rounded-2xl mb-8 shadow-card object-cover max-h-72">
         {{ end }}
 
         <div class="flex items-center gap-4 text-sm text-gray-400 mb-8 pb-6 border-b border-gray-100">
@@ -79,7 +79,7 @@
             <a href="{{ .Permalink }}" class="flex gap-3 group">
               <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary-xlight">
                 {{ if isset .Params "banner" }}
-                <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                <img src="{{ urls.JoinPath $.Site.BaseURL .Params.banner }}" alt="{{ .Title }}" class="w-full h-full object-cover">
                 {{ else }}
                 <div class="w-full h-full flex items-center justify-center">
                   <i class="fas fa-newspaper text-primary text-lg"></i>

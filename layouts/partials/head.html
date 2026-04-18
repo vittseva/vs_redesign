@@ -53,6 +53,6 @@
 <meta property="og:type" content="{{ if and (eq .Type "blog") (eq .Kind "page") }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-{{ with .Params.banner }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+{{ with .Params.banner }}<meta property="og:image" content="{{ urls.JoinPath $.Site.BaseURL . }}">{{ end }}
 
 {{ hugo.Generator }}
