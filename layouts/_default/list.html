@@ -65,7 +65,7 @@
           <h3 class="font-bold text-neutral-900 mb-4 text-sm">Categories</h3>
           <div class="space-y-2">
             {{ range $name, $taxonomy := $taxonomies }}
-            <a href="{{ urls.JoinPath .Site.BaseURL (printf "categories/%s/" ($name | urlize)) }}"
+            <a href="{{ urls.JoinPath $.Site.BaseURL (printf "categories/%s/" ($name | urlize)) }}"
                class="flex items-center justify-between text-sm text-gray-600 hover:text-primary transition py-1">
               <span>{{ $name | title }}</span>
               <span class="px-2 py-0.5 bg-primary-xlight text-primary text-xs rounded-full font-medium">{{ len $taxonomy }}</span>

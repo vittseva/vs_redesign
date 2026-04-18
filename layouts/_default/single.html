@@ -32,7 +32,7 @@
         {{ with .Params.tags }}
         <div class="mt-10 pt-6 border-t border-gray-100 flex flex-wrap gap-2">
           {{ range . }}
-          <a href="{{ urls.JoinPath .Site.BaseURL (printf "tags/%s/" (. | urlize)) }}"
+          <a href="{{ urls.JoinPath $.Site.BaseURL (printf "tags/%s/" (. | urlize)) }}"
              class="px-3 py-1 bg-neutral-100 text-gray-600 text-xs rounded-full hover:bg-primary-xlight hover:text-primary transition">
             #{{ . }}
           </a>
