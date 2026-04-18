@@ -1,0 +1,152 @@
+{{ define "main" }}
+
+<!-- Page Header -->
+<div class="bg-gradient-to-r from-neutral-900 to-primary-dark py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <span class="text-primary text-sm font-semibold tracking-widest uppercase">Get In Touch</span>
+    <h1 class="mt-2 text-3xl lg:text-4xl font-bold text-white mb-2">{{ .Title }}</h1>
+    <p class="text-white/65 text-base max-w-2xl">{{ .Description }}</p>
+    <nav class="mt-4 text-sm text-white/50">
+      <a href="{{ "/" | relURL }}" class="hover:text-white transition">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{{ .Title }}</span>
+    </nav>
+  </div>
+</div>
+
+<!-- Main layout -->
+<div class="max-w-7xl mx-auto px-6 py-14">
+  <div class="grid lg:grid-cols-5 gap-12 items-start">
+
+    <!-- Left: contact info -->
+    <aside class="lg:col-span-2 space-y-6">
+
+      <!-- Intro text from content -->
+      <div class="text-gray-500 text-sm leading-relaxed vs-contact-intro">
+        {{ .Content }}
+      </div>
+
+      <!-- Contact details card -->
+      <div class="bg-neutral-50 rounded-2xl p-6 space-y-5">
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+            <i class="fas fa-location-dot text-primary"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Office</p>
+            <p class="text-sm text-neutral-800 font-medium">{{ .Site.Params.address }}</p>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-phone text-primary"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Phone</p>
+            <a href="tel:{{ .Site.Params.phone }}" class="text-sm text-neutral-800 font-medium hover:text-primary transition">
+              {{ .Site.Params.phone }}
+            </a>
+          </div>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-envelope text-primary"></i>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-0.5">Email</p>
+            <a href="mailto:{{ .Site.Params.email }}" class="text-sm text-neutral-800 font-medium hover:text-primary transition">
+              {{ .Site.Params.email }}
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social links -->
+      <div class="bg-neutral-50 rounded-2xl p-6">
+        <p class="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-4">Follow Us</p>
+        <div class="flex gap-3">
+          {{ with .Site.Params.linkedin }}
+          <a href="{{ . }}" target="_blank" rel="noopener"
+             class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white text-gray-500 transition shadow-sm">
+            <i class="fab fa-linkedin text-sm"></i>
+          </a>
+          {{ end }}
+          {{ with .Site.Params.facebook }}
+          <a href="{{ . }}" target="_blank" rel="noopener"
+             class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white text-gray-500 transition shadow-sm">
+            <i class="fab fa-facebook text-sm"></i>
+          </a>
+          {{ end }}
+          {{ with .Site.Params.twitter }}
+          <a href="{{ . }}" target="_blank" rel="noopener"
+             class="w-10 h-10 rounded-xl bg-white border border-gray-200 flex items-center justify-center hover:bg-primary hover:border-primary hover:text-white text-gray-500 transition shadow-sm">
+            <i class="fab fa-twitter text-sm"></i>
+          </a>
+          {{ end }}
+        </div>
+      </div>
+
+      <!-- Why consult card -->
+      <div class="bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-6 text-white">
+        <i class="fas fa-shield-halved text-2xl mb-3 block"></i>
+        <h3 class="font-bold text-base mb-2">Why book a consultation?</h3>
+        <ul class="space-y-2 text-white/75 text-sm">
+          <li class="flex items-start gap-2">
+            <i class="fas fa-check text-xs mt-1 flex-shrink-0"></i>
+            <span>Completely free, no obligation</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fas fa-check text-xs mt-1 flex-shrink-0"></i>
+            <span>Unbiased, multi-brand advice</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fas fa-check text-xs mt-1 flex-shrink-0"></i>
+            <span>Matched to the right specialist for your needs</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <i class="fas fa-check text-xs mt-1 flex-shrink-0"></i>
+            <span>Personalised solutions, not generic products</span>
+          </li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- Right: Zoho form in a styled card -->
+    <div class="lg:col-span-3">
+      <div class="bg-white rounded-2xl shadow-card overflow-hidden border border-gray-100">
+
+        <!-- Card header -->
+        <div class="bg-gradient-to-r from-neutral-50 to-white px-6 py-5 border-b border-gray-100 flex items-center gap-3">
+          <div class="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-calendar-check text-primary"></i>
+          </div>
+          <div>
+            <h2 class="font-bold text-neutral-900 text-base leading-tight">Schedule a Free Consultation</h2>
+            <p class="text-xs text-gray-400 mt-0.5">Usually responds within one business day</p>
+          </div>
+        </div>
+
+        <!-- Iframe container -->
+        <div class="vs-zoho-frame-wrap px-2 pb-2 pt-1">
+          <iframe
+            aria-label="VS Lead Generation"
+            frameborder="0"
+            src="https://forms.zohopublic.in/abhinav11/form/We/formperma/-oosouu7lYImYvOp-ZpQVZQXe24OInAcw7tI7GlnIdM"
+            class="w-full block"
+            style="min-height:680px;border:none;"
+            loading="lazy">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+{{ end }}

@@ -1,0 +1,168 @@
+baseURL = ''
+languageCode = 'en-us'
+title = 'VittSeva'
+publishDir = "docs"
+pluralizelisttitles = false
+summaryLength = 70
+
+[pagination]
+  pagerSize = 10
+
+googleAnalytics = "G-QX89H67J8K"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[permalinks]
+  blog = "/blog/:year/:month/:day/:contentbasename/"
+
+# ── Menus ──────────────────────────────────────────────────────────────────
+[[menu.main]]
+  name       = "Home"
+  identifier = "home"
+  url        = "/"
+  weight     = 1
+
+[[menu.main]]
+  name       = "Services"
+  identifier = "services"
+  url        = "/services/"
+  weight     = 2
+
+  [[menu.main]]
+    name   = "Accounting & Tax"
+    url    = "/services#vsat"
+    weight = 1
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Insurance"
+    url    = "/services#vsin"
+    weight = 2
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Claim Settlement"
+    url    = "/services#vscs"
+    weight = 3
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Loans"
+    url    = "/services#vsln"
+    weight = 4
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Investments"
+    url    = "/services#vsint"
+    weight = 5
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Funding & Finance"
+    url    = "/services#vsff"
+    weight = 6
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Business Banking"
+    url    = "/services#vsbb"
+    weight = 7
+    parent = "services"
+
+  [[menu.main]]
+    name   = "NRI Services"
+    url    = "/services#vsnri"
+    weight = 8
+    parent = "services"
+
+  [[menu.main]]
+    name   = "Corporate Law"
+    url    = "/services#vscl"
+    weight = 9
+    parent = "services"
+
+[[menu.main]]
+  name       = "About Us"
+  identifier = "about"
+  url        = "/about/"
+  weight     = 3
+
+[[menu.main]]
+  name       = "Blog"
+  identifier = "blog"
+  url        = "/blog/"
+  weight     = 4
+
+[[menu.main]]
+  name       = "Contact"
+  identifier = "contact"
+  url        = "/contact/"
+  weight     = 5
+
+# ── Site Params ────────────────────────────────────────────────────────────
+[params]
+  tagline          = "Simple · Optimal · Personal"
+  description      = "VittSeva — Financial Advisory Services for individuals and businesses. Investments, Insurance, Loans, Tax, NRI Services and more."
+  author           = "VittSeva"
+  mainSections     = ["blog"]
+  date_format      = "January 2, 2006"
+
+  logo             = "img/vs/logo-vittseva.svg"
+  logo_small       = "img/vs/logo-vittseva.svg"
+
+  phone            = "+91 83101 99396"
+  email            = "info@vittseva.com"
+  address          = "Koramangala, Bangalore"
+  contact_url      = "/contact/"
+
+  linkedin         = "https://www.linkedin.com/in/vittseva"
+  facebook         = "https://www.facebook.com/vittsevaofficial/"
+  twitter          = "https://twitter.com/VittSeva"
+
+  # Hero section
+  [params.hero]
+    headline    = "Your Financial Goals,<br>Our Expert Guidance"
+    subtext     = "A comprehensive range of financial services — simple, personal & optimal — for individuals and businesses across India."
+    cta_primary_text = "Book Free Consultation"
+    cta_primary_url  = "/contact/"
+    cta_secondary_text = "Explore Services"
+    cta_secondary_url  = "/services/"
+
+  # Stats strip
+  [[params.stats]]
+    value = "100+"
+    label = "Financial Services"
+  [[params.stats]]
+    value = "7"
+    label = "Expert Advisors"
+  [[params.stats]]
+    value = "500+"
+    label = "Clients Served"
+  [[params.stats]]
+    value = "10+"
+    label = "Years of Experience"
+
+  # Why VittSeva
+  [[params.why]]
+    icon  = "fa-solid fa-scale-balanced"
+    title = "Unbiased Advice"
+    text  = "Multi-brand, multi-option approach. We recommend what's best for you — not what pays us the most."
+  [[params.why]]
+    icon  = "fa-solid fa-user-group"
+    title = "Specialist Team"
+    text  = "Seven specialists covering every financial domain — investments, insurance, law, banking, tax and more."
+  [[params.why]]
+    icon  = "fa-solid fa-headset"
+    title = "Personalised Service"
+    text  = "Every client gets a tailored plan. We take time to understand your situation before recommending anything."
+
+  # Footer about blurb
+  about_us = "A financial services firm making finance simple, personal &amp; optimal for individuals and businesses across India."
+  copyright = "© 2023–2025 VittSeva Financial Advisory Services. All rights reserved."
+
+[taxonomies]
+  category = "categories"
+  tag      = "tags"
+  author   = "authors"

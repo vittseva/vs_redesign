@@ -1,0 +1,58 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+{{ $title := .Title | default .Site.Title }}
+<title>{{ if not .IsHome }}{{ $title }} | {{ end }}{{ .Site.Title }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+
+<!-- Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Fonts: Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- FontAwesome 6 -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+
+<!-- Tailwind CDN (dev) -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary:   { DEFAULT: '#38a7bb', dark: '#1e6b78', light: '#e8f7fa', xlight: '#f0fbfd' },
+          brand:     { green: '#4a9c5a', greendk: '#357343' },
+          neutral:   { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a' }
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif']
+        },
+        boxShadow: {
+          card: '0 2px 16px 0 rgba(30,107,120,0.08)',
+          cardHover: '0 8px 32px 0 rgba(30,107,120,0.16)'
+        }
+      }
+    }
+  }
+</script>
+
+<!-- Custom overrides -->
+<link rel="stylesheet" href="{{ "css/vittseva.css" | relURL }}">
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}" type="image/x-icon">
+<link rel="apple-touch-icon" href="{{ "img/apple-touch-icon.png" | relURL }}">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:type" content="{{ if and (eq .Type "blog") (eq .Kind "page") }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ with .Params.banner }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+
+{{ hugo.Generator }}

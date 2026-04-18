@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VittSeva — Design Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary:   { DEFAULT: '#38a7bb', dark: '#1e6b78', light: '#e8f7fa', xlight: '#f0fbfd' },
+        brand:     { green: '#4a9c5a' },
+        neutral:   { 50: '#f8fafc', 100: '#f1f5f9', 800: '#1e293b', 900: '#0f172a' }
+      },
+      fontFamily: { sans: ['Inter', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<style>
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 80px; }
+.shadow-card { box-shadow: 0 2px 16px 0 rgba(30,107,120,0.08); }
+.shadow-card-hover { box-shadow: 0 8px 32px 0 rgba(30,107,120,0.16); }
+.line-clamp-2 { display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
+</style>
+</head>
+<body class="font-sans antialiased bg-white">
+
+<!-- TOPBAR -->
+<div class="bg-neutral-900 text-gray-300 text-sm py-2">
+  <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <span>
+      <i class="fas fa-phone mr-1 text-primary"></i>
+      <a href="tel:+918310199396" class="hover:text-white transition">+91 83101 99396</a>
+      <span class="mx-3 opacity-30">|</span>
+      <i class="fas fa-envelope mr-1 text-primary"></i>
+      <a href="mailto:info@vittseva.com" class="hover:text-white transition">info@vittseva.com</a>
+    </span>
+    <span class="flex gap-4">
+      <a href="#" class="hover:text-primary transition"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-primary transition"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-primary transition"><i class="fab fa-twitter"></i></a>
+    </span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-between h-16">
+      <a href="#" class="flex items-center gap-2">
+        <span class="text-2xl font-black text-primary-dark">Vitt<span class="text-brand-green">Seva</span></span>
+        <span class="text-xs text-gray-400 font-medium hidden sm:block">Simple · Optimal · Personal</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="#" class="px-3 py-2 text-sm font-semibold text-primary">Home</a>
+        <a href="#services" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">Services</a>
+        <a href="#why" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">About Us</a>
+        <a href="#blog" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">Blog</a>
+        <a href="#contact" class="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary transition">Contact</a>
+        <a href="#contact" class="ml-3 px-4 py-2 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition shadow-sm">
+          Book Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="relative bg-gradient-to-br from-primary-dark via-primary to-brand-green overflow-hidden">
+  <div class="absolute inset-0 opacity-10"
+       style="background-image:url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")">
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6 py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-brand-green inline-block"></span>
+          Trusted Financial Advisory
+        </div>
+        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+          Your Financial Goals,<br>Our Expert Guidance
+        </h1>
+        <p class="text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
+          A comprehensive range of financial services — simple, personal & optimal — for individuals and businesses across India.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="#contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-primary-dark font-bold rounded-xl hover:bg-primary-light transition shadow-lg text-base">
+            <i class="fas fa-calendar-check"></i> Book Free Consultation
+          </a>
+          <a href="#services" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-white/60 text-white font-semibold rounded-xl hover:bg-white/10 transition text-base">
+            Explore Services <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hidden lg:grid grid-cols-2 gap-4">
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center"><div class="text-4xl font-black text-white mb-1">100+</div><div class="text-white/70 text-sm font-medium">Financial Services</div></div>
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center"><div class="text-4xl font-black text-white mb-1">7</div><div class="text-white/70 text-sm font-medium">Expert Advisors</div></div>
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center"><div class="text-4xl font-black text-white mb-1">500+</div><div class="text-white/70 text-sm font-medium">Clients Served</div></div>
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center"><div class="text-4xl font-black text-white mb-1">10+</div><div class="text-white/70 text-sm font-medium">Years Experience</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>
+
+<!-- SERVICES GRID -->
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">What We Offer</span>
+      <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">Our Financial Services</h2>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">From protection to prosperity — a comprehensive range of financial services delivered by specialists, tailored to your unique situation.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Service cards -->
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-calculator text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Accounting &amp; Tax Filing</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Streamlined Finances, Optimized Returns.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-shield-alt text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Insurance (Suraksha)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Protection Made Personal.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-user-shield text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Claim Settlement (Samadhan)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Efficient Solutions for Fair Compensation.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-credit-card text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Loans (Sahyog)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Unlocking Opportunities, Empowering Growth.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-chart-line text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Investments (Samriddhi)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Building Wealth, Maximizing Potential.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-money-bill text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Funding &amp; Finance (Suvidha)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Fueling Ambitions, Enabling Success.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-piggy-bank text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Business Banking (Samridhi)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Tailored Solutions for Business Growth.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fas fa-user-tie text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">NRI Services (Pravasi Seva)</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Seamless Financial Management, Global Reach.</p>
+      </div>
+      <div class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200 cursor-pointer">
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary transition-colors duration-200"><i class="fa-solid fa-gavel text-xl text-primary group-hover:text-white transition-colors"></i></div>
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">Corporate Law Advisory</h3>
+        <p class="text-sm text-gray-500 leading-relaxed">Expert Legal Guidance for Businesses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="py-20 bg-primary-xlight">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Why Choose Us</span>
+        <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900 leading-tight">Finance Made<br>Simple, Personal &amp; Optimal</h2>
+        <p class="mt-5 text-gray-600 leading-relaxed text-base max-w-lg">Vitt Seva (वित्त सेवा) — "Finance Service" in Hindi. We chose this name to reflect our commitment to making financial decisions straightforward and effective for everyone.</p>
+        <a href="#" class="mt-7 inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">Meet our team <i class="fas fa-arrow-right text-sm"></i></a>
+      </div>
+      <div class="space-y-5">
+        <div class="flex gap-5 items-start bg-white rounded-2xl p-6 shadow-card">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-scale-balanced text-white text-lg"></i></div>
+          <div><h3 class="font-bold text-neutral-900 mb-1">Unbiased Advice</h3><p class="text-sm text-gray-500 leading-relaxed">Multi-brand, multi-option approach. We recommend what's best for you — not what pays us the most.</p></div>
+        </div>
+        <div class="flex gap-5 items-start bg-white rounded-2xl p-6 shadow-card">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-user-group text-white text-lg"></i></div>
+          <div><h3 class="font-bold text-neutral-900 mb-1">Specialist Team</h3><p class="text-sm text-gray-500 leading-relaxed">Seven specialists covering every financial domain — investments, insurance, law, banking, tax and more.</p></div>
+        </div>
+        <div class="flex gap-5 items-start bg-white rounded-2xl p-6 shadow-card">
+          <div class="w-12 h-12 rounded-xl bg-primary flex items-center justify-center flex-shrink-0"><i class="fa-solid fa-headset text-white text-lg"></i></div>
+          <div><h3 class="font-bold text-neutral-900 mb-1">Personalised Service</h3><p class="text-sm text-gray-500 leading-relaxed">Every client gets a tailored plan. We take time to understand your situation before recommending anything.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">The People Behind VittSeva</span>
+      <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">Our Expert Team</h2>
+      <p class="mt-4 text-gray-500 max-w-xl mx-auto">Seven specialists, each with deep domain expertise — working together to give you the best possible advice.</p>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-card transition">
+        <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center mx-auto mb-4"><i class="fas fa-user text-white text-2xl"></i></div>
+        <h3 class="font-bold text-neutral-900 text-sm">Abhinav Jain</h3>
+        <p class="text-xs text-primary font-medium mt-1">Investments, Insurance &amp; NRI</p>
+      </div>
+      <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-card transition">
+        <div class="w-16 h-16 rounded-full bg-primary-dark flex items-center justify-center mx-auto mb-4"><i class="fas fa-gavel text-white text-2xl"></i></div>
+        <h3 class="font-bold text-neutral-900 text-sm">Ashish Jain</h3>
+        <p class="text-xs text-primary font-medium mt-1">Corporate Laws &amp; Business</p>
+      </div>
+      <div class="bg-neutral-50 rounded-2xl p-6 text-center hover:shadow-card transition">
+        <div class="w-16 h-16 rounded-full bg-brand-green flex items-center justify-center mx-auto mb-4"><i class="fas fa-piggy-bank text-white text-2xl"></i></div>
+        <h3 class="font-bold text-neutral-900 text-sm">Vikas Kumar</h3>
+        <p class="text-xs text-primary font-medium mt-1">Banking &amp; Loans</p>
+      </div>
+      <div class="bg-primary-xlight border-2 border-dashed border-primary/30 rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+        <div class="w-12 h-12 rounded-full border-2 border-primary/40 flex items-center justify-center mb-3"><i class="fas fa-users text-primary"></i></div>
+        <p class="text-sm font-semibold text-neutral-900 mb-1">7 Specialists</p>
+        <p class="text-xs text-gray-500 mb-4">Meet the full team</p>
+        <a href="#" class="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg hover:bg-primary-dark transition">View All</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section id="blog" class="py-20 bg-neutral-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Insights</span>
+        <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">From Our Blog</h2>
+      </div>
+      <a href="#" class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">All articles <i class="fas fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200">
+        <div class="h-44 bg-gradient-to-br from-primary to-brand-green flex items-center justify-center"><i class="fas fa-chart-line text-white/30 text-5xl"></i></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3"><time>Apr 14, 2026</time><span class="px-2 py-0.5 bg-primary-xlight text-primary rounded-full font-medium">Markets</span></div>
+          <h3 class="font-bold text-neutral-900 text-sm leading-snug mb-2 group-hover:text-primary transition line-clamp-2">Market Insights: The Impact of Recent Economic Changes on Investments</h3>
+          <p class="text-xs text-gray-500 leading-relaxed line-clamp-2">Explore how recent economic changes are shaping investment strategies and market dynamics.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:gap-2 transition-all">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200">
+        <div class="h-44 bg-gradient-to-br from-primary-dark to-primary flex items-center justify-center"><i class="fas fa-shield-alt text-white/30 text-5xl"></i></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3"><time>Mar 30, 2026</time><span class="px-2 py-0.5 bg-primary-xlight text-primary rounded-full font-medium">Insurance</span></div>
+          <h3 class="font-bold text-neutral-900 text-sm leading-snug mb-2 group-hover:text-primary transition line-clamp-2">The Importance of Insurance in Your Financial Plan</h3>
+          <p class="text-xs text-gray-500 leading-relaxed line-clamp-2">Why insurance isn't just protection — it's the foundation of a sound financial strategy.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:gap-2 transition-all">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover hover:-translate-y-1 transition-all duration-200">
+        <div class="h-44 bg-gradient-to-br from-brand-green to-primary flex items-center justify-center"><i class="fas fa-wallet text-white/30 text-5xl"></i></div>
+        <div class="p-6">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3"><time>Mar 15, 2026</time><span class="px-2 py-0.5 bg-primary-xlight text-primary rounded-full font-medium">Personal Finance</span></div>
+          <h3 class="font-bold text-neutral-900 text-sm leading-snug mb-2 group-hover:text-primary transition line-clamp-2">Smart Strategies for Building Your Retirement Corpus</h3>
+          <p class="text-xs text-gray-500 leading-relaxed line-clamp-2">A guide to maximising your Rs 50 lakh retirement fund with minimal risk and optimal returns.</p>
+          <a href="#" class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:gap-2 transition-all">Read more <i class="fas fa-arrow-right text-xs"></i></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section id="contact" class="py-16 bg-gradient-to-r from-primary-dark to-primary">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-5">
+      <i class="fas fa-calendar-check text-white text-2xl"></i>
+    </div>
+    <h2 class="text-2xl lg:text-3xl font-bold text-white mb-4">Ready to take control of your finances?</h2>
+    <p class="text-white/75 text-base mb-8 max-w-xl mx-auto leading-relaxed">Book a free 30-minute consultation with one of our specialists. No commitment, no jargon — just honest advice.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-white text-primary-dark font-bold rounded-xl hover:bg-primary-light transition shadow-lg">
+        <i class="fas fa-calendar-check"></i> Schedule Free Consultation
+      </a>
+      <a href="tel:+918310199396" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 border-2 border-white/50 text-white font-semibold rounded-xl hover:bg-white/10 transition">
+        <i class="fas fa-phone"></i> +91 83101 99396
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-neutral-900 text-gray-300">
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid md:grid-cols-3 gap-10">
+      <div>
+        <span class="text-2xl font-black text-white">Vitt<span class="text-primary">Seva</span></span>
+        <p class="mt-3 text-sm text-gray-400 leading-relaxed mb-5">A financial services firm making finance simple, personal & optimal for individuals and businesses across India.</p>
+        <div class="flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-linkedin text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-facebook text-sm"></i></a>
+          <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fab fa-twitter text-sm"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-5 text-sm">Our Services</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">Accounting &amp; Tax</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">Insurance</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">Investments</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">Loans</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">NRI Services</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-primary transition">Business Banking</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-5 text-sm">Get in Touch</h4>
+        <ul class="space-y-3 text-sm">
+          <li class="flex items-start gap-3"><i class="fas fa-location-dot mt-0.5 text-primary flex-shrink-0"></i><span class="text-gray-400">Koramangala, Bangalore</span></li>
+          <li class="flex items-center gap-3"><i class="fas fa-phone text-primary"></i><a href="tel:+918310199396" class="text-gray-400 hover:text-primary transition">+91 83101 99396</a></li>
+          <li class="flex items-center gap-3"><i class="fas fa-envelope text-primary"></i><a href="mailto:info@vittseva.com" class="text-gray-400 hover:text-primary transition">info@vittseva.com</a></li>
+        </ul>
+        <a href="#contact" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 bg-primary text-white text-sm font-semibold rounded-lg hover:bg-primary-dark transition">
+          <i class="fas fa-calendar-check"></i> Book Consultation
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-gray-500">
+      <span>© 2023–2025 VittSeva Financial Advisory Services. All rights reserved.</span>
+      <span>Built with Hugo</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+{{ define "main" }}
+  {{ partial "page-header.html" . }}
+
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid lg:grid-cols-3 gap-12">
+
+      <!-- Main content -->
+      <div class="lg:col-span-2">
+        {{ with .Params.banner }}
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full rounded-2xl mb-8 shadow-card object-cover max-h-72">
+        {{ end }}
+
+        <div class="flex items-center gap-4 text-sm text-gray-400 mb-8 pb-6 border-b border-gray-100">
+          <time>{{ .Date.Format "January 2, 2006" }}</time>
+          {{ with .Params.authors }}
+          <span>· by {{ delimit . ", " }}</span>
+          {{ end }}
+          {{ with .Params.categories }}
+          <span class="px-3 py-1 bg-primary-xlight text-primary rounded-full font-medium text-xs">
+            {{ index . 0 }}
+          </span>
+          {{ end }}
+        </div>
+
+        <div class="prose prose-lg prose-headings:font-bold prose-headings:text-neutral-900
+                    prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+                    max-w-none vs-content">
+          {{ .Content }}
+        </div>
+
+        <!-- Tags -->
+        {{ with .Params.tags }}
+        <div class="mt-10 pt-6 border-t border-gray-100 flex flex-wrap gap-2">
+          {{ range . }}
+          <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/"
+             class="px-3 py-1 bg-neutral-100 text-gray-600 text-xs rounded-full hover:bg-primary-xlight hover:text-primary transition">
+            #{{ . }}
+          </a>
+          {{ end }}
+        </div>
+        {{ end }}
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+
+        <!-- Search -->
+        <div class="bg-neutral-50 rounded-2xl p-6">
+          <h3 class="font-bold text-neutral-900 mb-4 text-sm">Search</h3>
+          <form class="flex gap-2">
+            <input type="text" placeholder="Search articles…"
+                   class="flex-1 px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30">
+            <button class="px-3 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition">
+              <i class="fas fa-search text-xs"></i>
+            </button>
+          </form>
+        </div>
+
+        <!-- CTA card -->
+        <div class="bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-6 text-white">
+          <i class="fas fa-calendar-check text-2xl mb-3"></i>
+          <h3 class="font-bold mb-2">Need financial advice?</h3>
+          <p class="text-white/70 text-sm mb-4 leading-relaxed">
+            Book a free 30-min consultation with our specialists.
+          </p>
+          <a href="{{ "/contact/" | relURL }}"
+             class="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary-dark font-bold text-sm rounded-lg hover:bg-primary-light transition">
+            Book Free Call
+          </a>
+        </div>
+
+        <!-- Recent posts -->
+        {{ $posts := where .Site.RegularPages "Type" "blog" }}
+        {{ if gt (len $posts) 0 }}
+        <div class="bg-neutral-50 rounded-2xl p-6">
+          <h3 class="font-bold text-neutral-900 mb-4 text-sm">Recent Articles</h3>
+          <div class="space-y-4">
+            {{ range first 4 $posts }}
+            <a href="{{ .Permalink }}" class="flex gap-3 group">
+              <div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-primary-xlight">
+                {{ if isset .Params "banner" }}
+                <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" class="w-full h-full object-cover">
+                {{ else }}
+                <div class="w-full h-full flex items-center justify-center">
+                  <i class="fas fa-newspaper text-primary text-lg"></i>
+                </div>
+                {{ end }}
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold text-neutral-900 group-hover:text-primary transition line-clamp-2 leading-snug">{{ .Title }}</h4>
+                <time class="text-xs text-gray-400 mt-1 block">{{ .Date.Format "Jan 2, 2006" }}</time>
+              </div>
+            </a>
+            {{ end }}
+          </div>
+        </div>
+        {{ end }}
+
+      </aside>
+    </div>
+  </div>
+{{ end }}

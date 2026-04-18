@@ -1,0 +1,67 @@
+<!-- ── HERO ───────────────────────────────────────────────────────────────── -->
+<section class="relative bg-gradient-to-br from-primary-dark via-primary to-brand-green overflow-hidden">
+
+  <!-- Background texture -->
+  <div class="absolute inset-0 opacity-10 vs-hero-texture"></div>
+
+  <div class="relative max-w-7xl mx-auto px-6 py-20 lg:py-32">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <!-- Left: Copy -->
+      <div>
+        <div class="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 backdrop-blur-sm">
+          <span class="w-2 h-2 rounded-full bg-brand-green inline-block"></span>
+          Trusted Financial Advisory
+        </div>
+        <h1 class="text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight mb-6">
+          {{ .Site.Params.hero.headline | safeHTML }}
+        </h1>
+        <p class="text-lg text-white/80 mb-8 max-w-lg leading-relaxed">
+          {{ .Site.Params.hero.subtext }}
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="{{ .Site.Params.hero.cta_primary_url | relURL }}"
+             class="inline-flex items-center justify-center gap-2 px-7 py-3.5 bg-white text-primary-dark font-bold rounded-xl hover:bg-primary-light transition shadow-lg text-base">
+            <i class="fas fa-calendar-check"></i>
+            {{ .Site.Params.hero.cta_primary_text }}
+          </a>
+          <a href="{{ .Site.Params.hero.cta_secondary_url | relURL }}"
+             class="inline-flex items-center justify-center gap-2 px-7 py-3.5 border-2 border-white/60 text-white font-semibold rounded-xl hover:bg-white/10 transition text-base">
+            {{ .Site.Params.hero.cta_secondary_text }}
+            <i class="fas fa-arrow-right text-sm"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Floating stat cards -->
+      <div class="hidden lg:flex flex-col gap-4">
+        <div class="grid grid-cols-2 gap-4">
+          {{ range .Site.Params.stats }}
+          <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 text-center hover:bg-white/15 transition">
+            <div class="text-4xl font-black text-white mb-1">{{ .value }}</div>
+            <div class="text-white/70 text-sm font-medium">{{ .label }}</div>
+          </div>
+          {{ end }}
+        </div>
+        <!-- Trust badge -->
+        <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-5 flex items-center gap-4">
+          <div class="w-12 h-12 rounded-full bg-brand-green/30 flex items-center justify-center flex-shrink-0">
+            <i class="fas fa-shield-halved text-white text-xl"></i>
+          </div>
+          <div>
+            <div class="text-white font-semibold text-sm">Multi-brand · Multi-option</div>
+            <div class="text-white/60 text-xs mt-0.5">Unbiased advice tailored to your needs</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Wave divider -->
+  <div class="absolute bottom-0 left-0 right-0">
+    <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
+      <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 25C840 30 960 30 1080 25C1200 20 1320 10 1380 5L1440 0V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="white"/>
+    </svg>
+  </div>
+</section>

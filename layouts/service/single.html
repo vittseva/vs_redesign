@@ -1,0 +1,33 @@
+{{ define "main" }}
+  {{ partial "page-header.html" . }}
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="grid lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2 vs-content prose prose-lg max-w-none">
+        {{ .Content }}
+      </div>
+      <aside class="space-y-8">
+        <div class="bg-gradient-to-br from-primary-dark to-primary rounded-2xl p-6 text-white">
+          <i class="fas fa-calendar-check text-2xl mb-3"></i>
+          <h3 class="font-bold mb-2">Interested in this service?</h3>
+          <p class="text-white/70 text-sm mb-4">Book a free consultation and we'll tailor a solution for you.</p>
+          <a href="{{ "/contact/" | relURL }}"
+             class="inline-flex items-center gap-2 px-4 py-2 bg-white text-primary-dark font-bold text-sm rounded-lg hover:bg-primary-light transition">
+            Book Free Call
+          </a>
+        </div>
+        <!-- Other services -->
+        <div class="bg-neutral-50 rounded-2xl p-6">
+          <h3 class="font-bold text-neutral-900 mb-4 text-sm">Other Services</h3>
+          <div class="space-y-2">
+            {{ range sort .Site.Data.features "weight" }}
+            <a href="{{ .url }}" class="flex items-center gap-3 text-sm text-gray-600 hover:text-primary transition py-1.5 border-b border-gray-100 last:border-0">
+              <i class="{{ .icon }} text-primary text-xs w-4"></i>
+              {{ .name | markdownify }}
+            </a>
+            {{ end }}
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+{{ end }}

@@ -1,0 +1,15 @@
+<!-- ── PAGE HEADER ────────────────────────────────────────────────────────── -->
+<div class="bg-gradient-to-r from-neutral-900 to-primary-dark py-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <h1 class="text-3xl lg:text-4xl font-bold text-white mb-2">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p class="text-white/65 text-base">{{ . }}</p>
+    {{ end }}
+    <!-- Breadcrumb -->
+    <nav class="mt-4 text-sm text-white/50">
+      <a href="{{ "/" | relURL }}" class="hover:text-white transition">Home</a>
+      <span class="mx-2">/</span>
+      <span class="text-white/80">{{ .Title }}</span>
+    </nav>
+  </div>
+</div>

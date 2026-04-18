@@ -1,0 +1,64 @@
+<!-- ── BLOG PREVIEW ───────────────────────────────────────────────────────── -->
+{{ $posts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ if gt (len $posts) 0 }}
+<section class="py-20 bg-neutral-50">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex items-end justify-between mb-12">
+      <div>
+        <span class="text-primary font-semibold text-sm tracking-widest uppercase">Insights</span>
+        <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">From Our Blog</h2>
+      </div>
+      <a href="{{ "/blog/" | relURL }}"
+         class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+        All articles <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range first 3 $posts }}
+      <article class="group bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-cardHover transition-all hover:-translate-y-1 duration-200">
+        <!-- Banner -->
+        <a href="{{ .Permalink }}" class="block overflow-hidden h-44">
+          {{ if isset .Params "banner" }}
+          <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}"
+               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+          {{ else }}
+          <div class="w-full h-full bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
+            <i class="fas fa-newspaper text-white/30 text-5xl"></i>
+          </div>
+          {{ end }}
+        </a>
+        <!-- Content -->
+        <div class="p-6">
+          <div class="flex items-center gap-3 text-xs text-gray-400 mb-3">
+            <time>{{ .Date.Format "Jan 2, 2006" }}</time>
+            {{ with .Params.categories }}
+            <span class="px-2 py-0.5 bg-primary-xlight text-primary rounded-full font-medium">
+              {{ index . 0 }}
+            </span>
+            {{ end }}
+          </div>
+          <h3 class="font-bold text-neutral-900 text-sm leading-snug mb-3 group-hover:text-primary transition line-clamp-2">
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+          </h3>
+          <p class="text-xs text-gray-500 leading-relaxed line-clamp-2">{{ .Summary }}</p>
+          <a href="{{ .Permalink }}"
+             class="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-primary hover:gap-2 transition-all">
+            Read more <i class="fas fa-arrow-right text-xs"></i>
+          </a>
+        </div>
+      </article>
+      {{ end }}
+    </div>
+
+    <div class="text-center mt-8 sm:hidden">
+      <a href="{{ "/blog/" | relURL }}"
+         class="inline-flex items-center gap-2 text-sm font-semibold text-primary">
+        All articles <i class="fas fa-arrow-right text-xs"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+{{ end }}

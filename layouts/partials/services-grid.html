@@ -1,0 +1,49 @@
+<!-- ── SERVICES GRID ───────────────────────────────────────────────────────── -->
+{{ if isset .Site.Data "features" }}
+{{ if gt (len .Site.Data.features) 0 }}
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section header -->
+    <div class="text-center mb-14">
+      <span class="text-primary font-semibold text-sm tracking-widest uppercase">What We Offer</span>
+      <h2 class="mt-2 text-3xl lg:text-4xl font-bold text-neutral-900">Our Financial Services</h2>
+      <p class="mt-4 text-gray-500 max-w-2xl mx-auto text-base leading-relaxed">
+        From protection to prosperity — a comprehensive range of financial services delivered by specialists,
+        tailored to your unique situation.
+      </p>
+    </div>
+
+    <!-- 3-column grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range sort .Site.Data.features "weight" }}
+      <a href="{{ .url }}" class="group block bg-white border border-gray-100 rounded-2xl p-7 shadow-card hover:shadow-cardHover hover:-translate-y-1 transition-all duration-200">
+        <!-- Icon -->
+        <div class="w-14 h-14 rounded-xl bg-primary-xlight flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors duration-200">
+          <i class="{{ .icon }} text-xl text-primary group-hover:text-white transition-colors duration-200"></i>
+        </div>
+        <!-- Name -->
+        <h3 class="text-base font-bold text-neutral-900 mb-2 group-hover:text-primary transition-colors">{{ .name | markdownify }}</h3>
+        <!-- Tagline -->
+        <p class="text-sm text-gray-500 leading-relaxed mb-4">{{ .description | markdownify }}</p>
+        <!-- Link hint -->
+        <span class="inline-flex items-center gap-1 text-xs font-semibold text-primary opacity-0 group-hover:opacity-100 transition-opacity">
+          Learn more <i class="fas fa-arrow-right text-xs"></i>
+        </span>
+      </a>
+      {{ end }}
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="text-center mt-12">
+      <a href="{{ "/services/" | relURL }}"
+         class="inline-flex items-center gap-2 px-6 py-3 border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary hover:text-white transition">
+        View All Services
+        <i class="fas fa-arrow-right text-sm"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+{{ end }}
+{{ end }}
