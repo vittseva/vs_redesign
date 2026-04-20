@@ -1,4 +1,4 @@
-baseURL = ''
+baseURL = 'https://vittseva.com/'
 languageCode = 'en-us'
 title = 'VittSeva'
 publishDir = "docs"
